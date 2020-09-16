@@ -1,0 +1,9 @@
+{
+  "name": "surveasy-client",
+  "version": "0.1.0",
+  "description": "A website to create and share surveys",
+  "main": "app.js",
+  "repository": "https://github.com/Rem113/surveasy-client.git",
+  "author": "Hillel Saal",
+  "license": "MIT"
+}
