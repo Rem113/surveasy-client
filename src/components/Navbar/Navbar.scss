@@ -1,103 +1,98 @@
 @import "../../config/style-variables.scss";
 
 .navbar {
-  .top {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    .brand {
-      margin: 1rem 0;
+  .brand {
+    margin: 1rem 0;
 
-      & span {
-        font-family: "Bellota", cursive;
-      }
-
-      .surv {
-        color: $primary-dark;
-      }
-
-      .easy {
-        color: $primary-light;
-      }
+    & span {
+      font-family: "Bellota", cursive;
     }
 
-    .auth {
-      display: none;
+    .surv {
+      color: $primary-dark;
+    }
+
+    .easy {
+      color: $primary-light;
     }
   }
 
-  .navigation {
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
-    z-index: 2;
+  .auth {
+    display: none;
+  }
+}
 
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0;
+.navigation {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  z-index: 2;
 
-    .active {
-      color: $primary;
-      fill: $primary;
-    }
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
 
-    &:not(.active) {
-      color: $title-color;
-      fill: $title-color;
-    }
+  .active {
+    color: $primary;
+    fill: $primary;
+  }
 
-    a {
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-      color: $title-color;
-    }
+  .inactive {
+    color: $text-color;
+    fill: $text-color;
+  }
 
-    li {
-      width: 100px;
-      text-align: center;
-    }
+  a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $title-color;
+  }
+
+  li {
+    width: 100px;
+    text-align: center;
   }
 }
 
 @media screen and (min-width: 768px) {
   .navbar {
-    .top {
-      justify-content: space-between;
+    justify-content: space-between;
+
+    .brand {
+      text-align: left;
+      margin: 0.75rem 1.5rem;
+    }
+
+    .auth {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      display: flex;
       margin: 0.75rem 1.5rem;
 
-      .brand {
-        text-align: left;
-        margin: 0;
+      a {
+        text-decoration: none;
+
+        li {
+          margin-left: 1rem;
+          color: $text-color;
+        }
       }
 
-      .auth {
-        display: flex;
-        align-items: center;
-        list-style-type: none;
-        display: flex;
-        margin: auto 0;
+      .button {
+        font-weight: 600;
 
-        a {
-          text-decoration: none;
-
-          li {
-            margin-left: 1rem;
-            color: $text-color;
-          }
-        }
-
-        .button {
-          font-weight: 600;
-
-          li {
-            background: $primary-light;
-            border-radius: 4px;
-            color: white;
-            padding: 0.5rem 1rem;
-          }
+        li {
+          background: $primary-light;
+          border-radius: 4px;
+          color: white;
+          padding: 0.5rem 1rem;
         }
       }
     }

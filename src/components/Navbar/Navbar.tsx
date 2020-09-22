@@ -9,26 +9,28 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbar}>
-      <div className={styles.top}>
-        <h1 className={styles.brand}>
-          <span className={styles.surv}>Surv</span>
-          <span className={styles.easy}>easy</span>
-        </h1>
+      <h1 className={styles.brand}>
+        <span className={styles.surv}>Surv</span>
+        <span className={styles.easy}>easy</span>
+      </h1>
 
-        <ul className={styles.auth}>
-          <Link to={routes.LOGIN}>
-            <li>Login</li>
-          </Link>
-          <Link className={styles.button} to={routes.SIGNUP}>
-            <li>Sign Up</li>
-          </Link>
-        </ul>
-      </div>
+      <ul className={styles.auth}>
+        <Link to={routes.LOGIN}>
+          <li>Login</li>
+        </Link>
+        <Link className={styles.button} to={routes.SIGNUP}>
+          <li>Sign Up</li>
+        </Link>
+      </ul>
 
       <ul className={styles.navigation}>
         <Link to={routes.HOME}>
           <li
-            className={location.pathname === routes.HOME ? styles.active : ""}
+            className={
+              location.pathname === routes.HOME
+                ? styles.active
+                : styles.inactive
+            }
           >
             <svg width="30" viewBox="0 0 24 24">
               <g>
@@ -43,7 +45,11 @@ const Navbar = () => {
         </Link>
         <Link to={routes.ABOUT}>
           <li
-            className={location.pathname === routes.ABOUT ? styles.active : ""}
+            className={
+              location.pathname === routes.ABOUT
+                ? styles.active
+                : styles.inactive
+            }
           >
             <svg width="30" viewBox="0 0 24 24">
               <g>
@@ -66,7 +72,9 @@ const Navbar = () => {
         <Link to={routes.CONTACT}>
           <li
             className={
-              location.pathname === routes.CONTACT ? styles.active : ""
+              location.pathname === routes.CONTACT
+                ? styles.active
+                : styles.inactive
             }
           >
             <svg width="30" viewBox="0 0 24 24">
