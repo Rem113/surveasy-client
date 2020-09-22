@@ -14,15 +14,6 @@ const Navbar = () => {
         <span className={styles.easy}>easy</span>
       </h1>
 
-      <ul className={styles.auth}>
-        <Link to={routes.LOGIN}>
-          <li>Login</li>
-        </Link>
-        <Link className={styles.button} to={routes.SIGNUP}>
-          <li>Sign Up</li>
-        </Link>
-      </ul>
-
       <ul className={styles.navigation}>
         <Link to={routes.HOME}>
           <li
@@ -90,6 +81,15 @@ const Navbar = () => {
             </svg>
             <p>Contact</p>
           </li>
+        </Link>
+      </ul>
+
+      <ul className={styles.auth}>
+        <Link to={routes.LOGIN}>
+          <li>Login</li>
+        </Link>
+        <Link className={styles.button} to={routes.SIGNUP}>
+          <li>Sign Up</li>
         </Link>
       </ul>
     </div>
