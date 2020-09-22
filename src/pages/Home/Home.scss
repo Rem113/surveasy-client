@@ -1,5 +1,17 @@
 @import "../../config/style-variables.scss";
 
+.background {
+  z-index: -1;
+  width: 66%;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .urn {
+    visibility: hidden;
+  }
+}
+
 .container {
   position: absolute;
   top: 0;
@@ -8,18 +20,6 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-
-  .background {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    width: 71%;
-
-    .urn {
-      visibility: hidden;
-    }
-  }
 
   .hero {
     margin: auto;
@@ -31,11 +31,12 @@
       font-weight: 600;
       font-size: 1.7rem;
       line-height: 2rem;
+      color: $text-color;
     }
 
     .subtitle {
       font-weight: normal;
-      color: $text-color;
+      color: $title-color;
       font-size: 1.2rem;
       margin: 2rem 0;
     }
@@ -45,12 +46,12 @@
       justify-content: center;
 
       button {
-        padding: 0.75rem 1.35rem;
+        padding: 0.6rem 1.3rem;
         box-shadow: $blue-drop;
         border-radius: 4px;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         font-weight: 600;
-        margin: 0 1rem;
+        margin-right: 1rem;
       }
 
       .main-cta {
@@ -69,7 +70,23 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
+  .background {
+    width: 50%;
+  }
+
+  .container {
+    width: 65%;
+    margin-left: 17.5%;
+    text-align: left;
+
+    .hero .actions {
+      justify-content: start;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .container .background .urn {
     visibility: visible;
   }

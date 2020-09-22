@@ -9,7 +9,23 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbar}>
-      <ul>
+      <div className={styles.top}>
+        <h1 className={styles.brand}>
+          <span className={styles.surv}>Surv</span>
+          <span className={styles.easy}>easy</span>
+        </h1>
+
+        <ul className={styles.auth}>
+          <Link to={routes.LOGIN}>
+            <li>Login</li>
+          </Link>
+          <Link className={styles.button} to={routes.SIGNUP}>
+            <li>Sign Up</li>
+          </Link>
+        </ul>
+      </div>
+
+      <ul className={styles.navigation}>
         <Link to={routes.HOME}>
           <li
             className={location.pathname === routes.HOME ? styles.active : ""}

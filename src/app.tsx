@@ -5,14 +5,12 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 import "./style.scss"
 
 import Home from "./pages/Home"
-import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 
 import routes from "./config/routes"
 
 const App = () => (
   <BrowserRouter>
-    <Header />
     <Navbar />
     <Switch>
       <Route path={routes.HOME} component={Home} exact />
