@@ -7,7 +7,8 @@
   "author": "Hillel Saal",
   "license": "MIT",
   "scripts": {
-    "start": "parcel public/index.html"
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html"
   },
   "devDependencies": {
     "@types/node": "^14.11.1",
