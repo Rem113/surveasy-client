@@ -4,210 +4,153 @@ import styles from "./Home.scss"
 
 const Home = () => (
   <>
-    <svg className={styles.background} viewBox="0 0 565.7 999">
+    <svg className={styles.background} viewBox="0 0 514.72 908.4">
       <g>
-        <g>
-          <polygon
-            style={{ fill: "#d7f5ff" }}
-            points="565.7 0 565.7 999 39.56 763.14 39.56 0 565.7 0"
+        <polygon
+          style={{ fill: "#d7f5ff" }}
+          points="514.72 0 514.72 908.4 36.72 693.93 36.72 0 514.72 0"
+        />
+        <polygon
+          style={{ fill: "#bdefff" }}
+          points="514.72 0 127.32 0 127.32 639.96 514.72 813.34 514.72 0"
+        />
+        <g className={styles.urn}>
+          <path
+            style={{ fill: "#008ebb" }}
+            d="M154,757.8,17,689.31V520.74l137,68.48Z"
+            transform="translate(-16.28)"
           />
-          <polygon
-            style={{ fill: "#bdefff" }}
-            points="565.7 0 139.43 0 139.43 703.78 565.7 894.46 565.7 0"
+          <path
+            style={{ fill: "#00b6ef" }}
+            d="M154,757.83l137-68.49V520.71L154,589.2Z"
+            transform="translate(-16.28)"
           />
-          <g className={styles.urn}>
-            <path
-              style={{ fill: "#008ebb" }}
-              d="M201,868,20.84,777.93V556.25L201,646.3Z"
-              transform="translate(-20.72)"
-            />
-            <path
-              style={{ fill: "#00b6ef" }}
-              d="M201,868l180.12-90.05V556.25L201,646.3Z"
-              transform="translate(-20.72)"
-            />
-            <path
-              style={{ fill: "#20c9ff" }}
-              d="M20.72,556.25l173.19-90.06,187,90.06-180.12,90Z"
-              transform="translate(-20.72)"
-            />
-            <rect
-              style={{ fill: "#fff" }}
-              x="112.29"
-              y="414.06"
-              width="125.18"
-              height="169.69"
-              rx="7.8"
-              transform="translate(-225.93 131.45) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#dcdcdc" }}
-              x="159.71"
-              y="538.94"
-              width="64.68"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-243.62 143.78) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#afafaf" }}
-              x="142.21"
-              y="532.05"
-              width="57.37"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-242.78 133.56) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#dcdcdc" }}
-              x="164.95"
-              y="550.61"
-              width="54.25"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-248.85 145.03) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#dcdcdc" }}
-              x="169.4"
-              y="558.99"
-              width="58.42"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-251.92 148.85) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#dcdcdc" }}
-              x="138.03"
-              y="495.74"
-              width="64.68"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-226.55 129.47) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#afafaf" }}
-              x="113.72"
-              y="470.56"
-              width="97.36"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-216.1 123.22) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#878787" }}
-              x="96.72"
-              y="436.69"
-              width="97.36"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-202.71 111.99) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#878787" }}
-              x="101.4"
-              y="446.01"
-              width="97.36"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-206.4 115.08) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#878787" }}
-              x="108.65"
-              y="466.18"
-              width="49.03"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-217.24 109.63) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#afafaf" }}
-              x="121.65"
-              y="493.61"
-              width="36.16"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-228.85 115.5) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#dcdcdc" }}
-              x="143.27"
-              y="507.41"
-              width="54.25"
-              height="6.95"
-              rx="3.48"
-              transform="translate(-231.78 130.71) rotate(-26.65)"
-            />
-            <circle
-              style={{ fill: "#dcdcdc" }}
-              cx="112.98"
-              cy="517.63"
-              r="3.48"
-            />
-            <circle
-              style={{ fill: "#dcdcdc" }}
-              cx="117.66"
-              cy="526.95"
-              r="3.48"
-            />
-            <circle
-              style={{ fill: "#02aee4" }}
-              cx="112.98"
-              cy="517.63"
-              r="1.74"
-            />
-            <rect
-              style={{ fill: "#dcdcdc" }}
-              x="151.9"
-              y="557.35"
-              width="6.95"
-              height="6.95"
-              transform="translate(-255.78 129.29) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#dcdcdc" }}
-              x="156.58"
-              y="566.67"
-              width="6.95"
-              height="6.95"
-              transform="translate(-259.46 132.38) rotate(-26.65)"
-            />
-            <rect
-              style={{ fill: "#dcdcdc" }}
-              x="161.26"
-              y="575.99"
-              width="6.95"
-              height="6.95"
-              transform="translate(-263.15 135.47) rotate(-26.65)"
-            />
-            <path
-              style={{ stroke: "#02aee4", strokeWidth: "4.47px" }}
-              d="M153,561.59l2.47.73,1.58-4.3"
-              transform="translate(-20.72)"
-            />
-            <path
-              style={{ stroke: "#02aee4", strokeWidth: "4.47px" }}
-              d="M162.55,580.54l2.47.73L166.6,577"
-              transform="translate(-20.72)"
-            />
-            <rect
-              style={{ strokeWidth: "4.47px", fill: "#04c3ff", stroke: "#000" }}
-              x="140.69"
-              y="560.5"
-              width="141.17"
-              height="18.57"
-              transform="translate(-253.38 154.8) rotate(-26.59)"
-            />
-            <rect
-              style={{ fill: "#20c9ff" }}
-              x="136.3"
-              y="560.73"
-              width="152.71"
-              height="23.3"
-              transform="translate(-254.4 155.69) rotate(-26.59)"
-            />
-          </g>
+          <path
+            style={{ fill: "#20c9ff" }}
+            d="M16.28,520.36l132.11-68.7L291,520.36,153.64,589Z"
+            transform="translate(-16.28)"
+          />
+          <rect
+            style={{ fill: "#fff" }}
+            x="86.12"
+            y="411.9"
+            width="95.49"
+            height="129.44"
+            rx="5.95"
+            transform="translate(-215.84 110.68) rotate(-26.65)"
+          />
+          <path
+            style={{ fill: "#dcdcdc" }}
+            d="M126.1,517.33l39.35-19.75a2.66,2.66,0,0,1,3.57,1.18h0a2.66,2.66,0,0,1-1.19,3.56l-39.35,19.75a2.65,2.65,0,0,1-3.56-1.18h0A2.65,2.65,0,0,1,126.1,517.33Z"
+            transform="translate(-16.28)"
+          />
+          <path
+            style={{ fill: "#afafaf" }}
+            d="M112.45,510.82l34.37-17.25a2.65,2.65,0,0,1,3.56,1.18h0a2.65,2.65,0,0,1-1.18,3.56l-34.37,17.25a2.65,2.65,0,0,1-3.56-1.18h0A2.65,2.65,0,0,1,112.45,510.82Z"
+            transform="translate(-16.28)"
+          />
+          <rect
+            style={{ fill: "#dcdcdc" }}
+            x="126.3"
+            y="516.07"
+            width="41.38"
+            height="5.3"
+            rx="2.65"
+            transform="translate(-233.33 121.04) rotate(-26.65)"
+          />
+          <path
+            style={{ fill: "#dcdcdc" }}
+            d="M133.24,531.55l35.08-17.61a2.65,2.65,0,0,1,3.56,1.18h0a2.65,2.65,0,0,1-1.18,3.56l-35.09,17.61a2.65,2.65,0,0,1-3.56-1.18h0A2.66,2.66,0,0,1,133.24,531.55Z"
+            transform="translate(-16.28)"
+          />
+          <path
+            style={{ fill: "#dcdcdc" }}
+            d="M109.56,484.38l39.35-19.75a2.65,2.65,0,0,1,3.56,1.17h0a2.65,2.65,0,0,1-1.18,3.56l-39.35,19.75a2.65,2.65,0,0,1-3.56-1.17h0A2.65,2.65,0,0,1,109.56,484.38Z"
+            transform="translate(-16.28)"
+          />
+          <path
+            style={{ fill: "#afafaf" }}
+            d="M92.34,470.76,154,439.83a2.65,2.65,0,0,1,3.56,1.18h0a2.66,2.66,0,0,1-1.19,3.56L94.72,475.5a2.65,2.65,0,0,1-3.56-1.18h0A2.65,2.65,0,0,1,92.34,470.76Z"
+            transform="translate(-16.28)"
+          />
+          <path
+            style={{ fill: "#878787" }}
+            d="M79.38,444.92,141,414a2.65,2.65,0,0,1,3.56,1.18h0a2.65,2.65,0,0,1-1.18,3.56L81.75,449.65a2.65,2.65,0,0,1-3.56-1.17h0A2.66,2.66,0,0,1,79.38,444.92Z"
+            transform="translate(-16.28)"
+          />
+          <path
+            style={{ fill: "#878787" }}
+            d="M82.94,452l61.64-30.93a2.65,2.65,0,0,1,3.56,1.17h0a2.66,2.66,0,0,1-1.19,3.56L85.32,456.76a2.65,2.65,0,0,1-3.56-1.17h0A2.65,2.65,0,0,1,82.94,452Z"
+            transform="translate(-16.28)"
+          />
+          <path
+            style={{ fill: "#878787" }}
+            d="M86.52,459.14l28.68-14.39a2.65,2.65,0,0,1,3.56,1.17h0a2.65,2.65,0,0,1-1.18,3.56l-28.69,14.4a2.65,2.65,0,0,1-3.56-1.18h0A2.66,2.66,0,0,1,86.52,459.14Z"
+            transform="translate(-16.28)"
+          />
+          <path
+            style={{ fill: "#afafaf" }}
+            d="M95.91,477.87l19.91-10a2.65,2.65,0,0,1,3.56,1.18h0a2.65,2.65,0,0,1-1.18,3.56l-19.91,10a2.65,2.65,0,0,1-3.56-1.18h0A2.65,2.65,0,0,1,95.91,477.87Z"
+            transform="translate(-16.28)"
+          />
+          <path
+            style={{ fill: "#dcdcdc" }}
+            d="M113.14,491.49l32.24-16.19a2.66,2.66,0,0,1,3.56,1.18h0a2.65,2.65,0,0,1-1.18,3.56l-32.25,16.18a2.65,2.65,0,0,1-3.56-1.17h0A2.66,2.66,0,0,1,113.14,491.49Z"
+            transform="translate(-16.28)"
+          />
+          <circle style={{ fill: "#dcdcdc" }} cx="86.18" cy="490.9" r="2.65" />
+          <circle style={{ fill: "#dcdcdc" }} cx="89.75" cy="498.01" r="2.65" />
+          <circle style={{ fill: "#02aee4" }} cx="86.18" cy="490.9" r="1.33" />
+          <rect
+            style={{ fill: "#dcdcdc" }}
+            x="116.33"
+            y="521.22"
+            width="5.3"
+            height="5.3"
+            transform="translate(-238.61 109.02) rotate(-26.65)"
+          />
+          <rect
+            style={{ fill: "#dcdcdc" }}
+            x="119.91"
+            y="528.33"
+            width="5.3"
+            height="5.3"
+            transform="translate(-241.42 111.38) rotate(-26.65)"
+          />
+          <rect
+            style={{ fill: "#dcdcdc" }}
+            x="123.47"
+            y="535.44"
+            width="5.3"
+            height="5.3"
+            transform="translate(-244.23 113.74) rotate(-26.65)"
+          />
+          <path
+            style={{ fill: "none", stroke: "#02aee4", strokeWidth: "4.47px" }}
+            d="M117.18,524.44l1.89.56,1.2-3.28"
+            transform="translate(-16.28)"
+          />
+          <path
+            style={{ fill: "none", stroke: "#02aee4", strokeWidth: "4.47px" }}
+            d="M124.47,538.89l1.88.56,1.21-3.26"
+            transform="translate(-16.28)"
+          />
+          <rect
+            style={{ fill: "#04c3ff", stroke: "#000", strokeWidth: "4.47px" }}
+            x="107.82"
+            y="523.58"
+            width="107.69"
+            height="14.17"
+            transform="translate(-236.71 128.49) rotate(-26.59)"
+          />
+          <rect
+            style={{ fill: "#20c9ff" }}
+            x="104.47"
+            y="523.76"
+            width="116.49"
+            height="17.77"
+            transform="translate(-237.48 129.17) rotate(-26.59)"
+          />
         </g>
       </g>
     </svg>

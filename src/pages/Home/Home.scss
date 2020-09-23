@@ -83,12 +83,26 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .background {
-    width: 40%;
+    width: 30%;
 
     .urn {
       visibility: visible;
+    }
+  }
+
+  .container {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    right: 0;
+    width: 1200px;
+    margin: 0 auto;
+
+    .hero {
+      margin: auto 0;
+      width: 600px;
     }
   }
 }
