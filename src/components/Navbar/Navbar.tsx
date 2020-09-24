@@ -9,10 +9,12 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbar}>
-      <h1 className={styles.brand}>
-        <span className={styles.surv}>Surv</span>
-        <span className={styles.easy}>easy</span>
-      </h1>
+      <Link className={styles.brand} to={routes.HOME}>
+        <h1>
+          <span className={styles.surv}>Surv</span>
+          <span className={styles.easy}>easy</span>
+        </h1>
+      </Link>
 
       <ul className={styles.navigation}>
         <Link to={routes.HOME}>
@@ -85,12 +87,12 @@ const Navbar = () => {
       </ul>
 
       <ul className={styles.auth}>
-        <Link to={routes.LOGIN}>
-          <li>Login</li>
-        </Link>
-        <Link className={styles.button} to={routes.SIGNUP}>
-          <li>Sign Up</li>
-        </Link>
+        <li>
+          <Link to={routes.LOGIN}>Login</Link>
+        </li>
+        <li className={styles.button}>
+          <Link to={routes.SIGNUP}>Sign Up</Link>
+        </li>
       </ul>
     </div>
   )

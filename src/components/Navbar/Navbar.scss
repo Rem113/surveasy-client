@@ -3,6 +3,11 @@
 .navbar {
   display: flex;
   justify-content: center;
+  z-index: 10;
+
+  a {
+    text-decoration: none;
+  }
 
   .brand {
     margin: 1rem 0;
@@ -76,10 +81,10 @@
       display: flex;
       margin: 0.75rem 1.5rem 0.75rem 0;
 
-      a {
+      li {
         text-decoration: none;
 
-        li {
+        a {
           margin-left: 1rem;
           color: $text-color;
         }
@@ -89,7 +94,7 @@
         font-weight: 600;
         white-space: nowrap;
 
-        li {
+        a {
           background: $primary-light;
           border-radius: 4px;
           color: white;

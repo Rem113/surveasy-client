@@ -14,8 +14,6 @@ const App = () => (
     <Navbar />
     <Switch>
       <Route path={routes.HOME} component={Home} exact />
-      <Route path={routes.ABOUT} component={Home} exact />
-      <Route path={routes.CONTACT} component={Home} exact />
     </Switch>
   </BrowserRouter>
 )
