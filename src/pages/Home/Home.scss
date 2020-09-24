@@ -2,7 +2,7 @@
 
 .background {
   z-index: -1;
-  width: 72%;
+  width: 17rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -31,15 +31,15 @@
 
     .title {
       font-weight: 600;
-      font-size: 1.6rem;
-      line-height: 2rem;
+      font-size: 2rem;
+      line-height: 2.5rem;
       color: $text-color;
     }
 
     .subtitle {
       font-weight: normal;
       color: $title-color;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin: 2rem 0;
     }
 
@@ -75,7 +75,7 @@
 
 @media screen and (min-width: 768px) {
   .background {
-    width: 50%;
+    width: 25rem;
     right: 0;
   }
 
@@ -87,10 +87,12 @@
 
 @media screen and (min-width: 1200px) {
   .background {
-    width: 30%;
+    width: 22rem;
 
     .urn {
       visibility: visible;
+      position: absolute;
+      left: 0;
     }
   }
 

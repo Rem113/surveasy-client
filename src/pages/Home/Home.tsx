@@ -125,11 +125,11 @@ const Home = () => (
           transform="translate(-174.35 115.12) rotate(-26.65)"
         />
         <path
-          style={{ fill: "none", stroke: "#02aee4", strokeWidth: "6.06px" }}
+          style={{ fill: "none", stroke: "#02aee4", strokeWidth: "3.06px" }}
           d="M143.17,406.25l2.67.79,1.71-4.65"
         />
         <path
-          style={{ fill: "none", stroke: "#02aee4", strokeWidth: "6.06px" }}
+          style={{ fill: "none", stroke: "#02aee4", strokeWidth: "3.06px" }}
           d="M153.51,426.76l2.67.79,1.71-4.62"
         />
         <rect
