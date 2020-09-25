@@ -88,11 +88,10 @@
 @media screen and (min-width: 1200px) {
   .background {
     width: 22rem;
+    top: -2rem;
 
     .urn {
       visibility: visible;
-      position: absolute;
-      left: 0;
     }
   }
 
