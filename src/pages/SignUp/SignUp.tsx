@@ -22,7 +22,7 @@ const SignUp = () => {
 
   return (
     <div className={styles.container}>
-      <h1>SignUp</h1>
+      <h1>Sign Up</h1>
       <div className={styles.input}>
         <label htmlFor="email">Email</label>
         <input
@@ -32,23 +32,25 @@ const SignUp = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <div className={styles.input}>
-        <label htmlFor="pass">Password</label>
-        <input
-          id="pass"
-          type="password"
-          value={pass}
-          onChange={(e) => setPass(e.target.value)}
-        />
-      </div>
-      <div className={styles.input}>
-        <label htmlFor="confPass">Confirm password</label>
-        <input
-          id="confPass"
-          type="password"
-          value={confPass}
-          onChange={(e) => setConfPass(e.target.value)}
-        />
+      <div className={styles["pass-input"]}>
+        <div className={styles.input}>
+          <label htmlFor="pass">Password</label>
+          <input
+            id="pass"
+            type="password"
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+          />
+        </div>
+        <div className={styles.input}>
+          <label htmlFor="confPass">Confirm password</label>
+          <input
+            id="confPass"
+            type="password"
+            value={confPass}
+            onChange={(e) => setConfPass(e.target.value)}
+          />
+        </div>
       </div>
       <PrimaryButton onClick={submit}>Sign Up</PrimaryButton>
       <h4>OR</h4>
