@@ -56,6 +56,8 @@
     border: 1px solid $title-color;
     margin-bottom: 1rem;
     background: white;
+    font-size: 0.8rem;
+    cursor: pointer;
 
     svg {
       margin-right: 1rem;
@@ -70,5 +72,11 @@
       text-decoration: none;
       color: $primary-dark;
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container .input {
+    width: 25rem;
   }
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
 import GoogleLogo from "../../components/GoogleLogo"
+import PrimaryButton from "../../components/PrimaryButton"
 
 import routes from "../../config/routes"
 import http from "../../utils/http"
@@ -49,10 +50,8 @@ const SignUp = () => {
           onChange={(e) => setConfPass(e.target.value)}
         />
       </div>
-      <button className={styles.button} onClick={submit}>
-        Sign Up
-      </button>
-      <h3>OR</h3>
+      <PrimaryButton onClick={submit}>Sign Up</PrimaryButton>
+      <h4>OR</h4>
       <button className={styles["google-button"]}>
         <GoogleLogo />
         Sign up with Google

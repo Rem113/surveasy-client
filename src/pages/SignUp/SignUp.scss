@@ -1,0 +1,82 @@
+@import "../../config/style-variables.scss";
+
+.container {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: $title-color;
+    font-weight: normal;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .input {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    display: flex;
+    border-radius: 4px;
+    flex-direction: column;
+
+    label {
+      font-size: 0.85rem;
+      color: $text-color;
+    }
+
+    input {
+      border: none;
+      background: $input-bg;
+      padding: 0.75rem;
+    }
+  }
+
+  h4 {
+    margin: 0.75rem 0;
+    font-weight: 600;
+  }
+
+  .google-button {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    color: $title-color;
+    border-radius: 4px;
+    box-shadow: $black-drop;
+    border: 1px solid $title-color;
+    margin-bottom: 1rem;
+    background: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    svg {
+      margin-right: 1rem;
+    }
+  }
+
+  h5 {
+    font-weight: normal;
+    color: $text-color;
+
+    a {
+      text-decoration: none;
+      color: $primary-dark;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container .input {
+    width: 25rem;
+  }
+}
