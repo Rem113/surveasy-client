@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import SignUp from "./pages/SignUp"
 import Login from "./pages/Login"
+import CreateSurvey from "./pages/CreateSurvey"
 
 const App = () => (
   <BrowserRouter>
@@ -19,6 +20,7 @@ const App = () => (
       <Route path={routes.HOME} component={Home} exact />
       <Route path={routes.SIGNUP} component={SignUp} exact />
       <Route path={routes.LOGIN} component={Login} exact />
+      <Route path={routes.CREATE_SURVEY} component={CreateSurvey} exact />
     </Switch>
   </BrowserRouter>
 )
