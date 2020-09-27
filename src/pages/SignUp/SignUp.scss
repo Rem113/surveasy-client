@@ -31,12 +31,12 @@
 
   .input {
     min-width: 0;
-    width: 100%;
     text-align: left;
     margin: 0 auto 1.5rem auto;
     display: flex;
     border-radius: 4px;
     flex-direction: column;
+    width: 100%;
 
     label {
       font-size: 0.85rem;
@@ -92,11 +92,5 @@
       grid-template-columns: 1fr;
       gap: 0;
     }
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .container .input {
-    width: 25rem;
   }
 }
