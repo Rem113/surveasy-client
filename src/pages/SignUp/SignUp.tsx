@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import GoogleLogo from "../../components/GoogleLogo"
 
 import routes from "../../config/routes"
+import http from "../../utils/http"
 
 import styles from "./SignUp.scss"
 
@@ -13,7 +14,9 @@ const SignUp = () => {
   const [confPass, setConfPass] = useState("")
 
   const submit = () => {
-    console.log(email, pass, confPass)
+    http
+      .post("/auth/register", { email, pass, confPass })
+      .then((res) => console.log(res.body))
   }
 
   return (

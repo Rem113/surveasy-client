@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
+import PrimaryButton from "../../components/PrimaryButton"
 import GoogleLogo from "../../components/GoogleLogo"
 
 import routes from "../../config/routes"
@@ -36,10 +37,8 @@ const Login = () => {
           onChange={(e) => setPass(e.target.value)}
         />
       </div>
-      <button className={styles.button} onClick={submit}>
-        Login
-      </button>
-      <h3>OR</h3>
+      <PrimaryButton onClick={submit}>Login</PrimaryButton>
+      <h4>OR</h4>
       <button className={styles["google-button"]}>
         <GoogleLogo />
         Sign in with Google

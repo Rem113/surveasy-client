@@ -1,0 +1,15 @@
+@import "../../config/style-variables.scss";
+
+.button {
+  border: none;
+  background: $primary;
+  color: white;
+  padding: 0.6rem 1.3rem;
+  box-shadow: $blue-drop;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  width: fit-content;
+}

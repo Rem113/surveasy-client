@@ -1,6 +1,6 @@
 import React from "react"
 
-import styles from "./Home.scss"
+import styles from "./Illustration.scss"
 
 const Illustration = () => (
   <svg className={styles.background} viewBox="0 0 484.74 798.13">
