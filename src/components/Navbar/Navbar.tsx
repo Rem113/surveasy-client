@@ -85,7 +85,6 @@ const Navbar = () => {
           </li>
         </Link>
       </ul>
-
       <ul className={styles.auth}>
         <li>
           <Link to={routes.LOGIN}>Login</Link>
