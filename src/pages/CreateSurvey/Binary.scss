@@ -1,0 +1,12 @@
+@import "../../config/style-variables.scss";
+
+label {
+  vertical-align: middle;
+}
+
+input {
+  border: none;
+  background: $input-bg;
+  padding: 0.75rem;
+  border-radius: 4px;
+}

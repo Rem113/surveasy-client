@@ -1,0 +1,21 @@
+.answer {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+
+  label {
+    grid-column: 1/2;
+    margin: auto;
+  }
+
+  input {
+    grid-column: 2/8;
+  }
+
+  svg {
+    vertical-align: middle;
+    padding: 1rem;
+    cursor: pointer;
+    grid-column: 8/9;
+  }
+}

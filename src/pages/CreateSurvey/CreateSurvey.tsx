@@ -1,7 +1,11 @@
 import React, { useState, useRef } from "react"
 import { v4 as uuid } from "uuid"
+
 import Binary from "./Binary"
 import Multi from "./Multi"
+import Rating from "./Rating"
+
+import styles from "./CreateSurvey.scss"
 
 enum QuestionType {
   BINARY,
@@ -32,7 +36,10 @@ const CreateSurvey = () => {
         case QuestionType.EXCLUSIVE:
         case QuestionType.MULTI:
           const multi = elem as IMultiQuestion
-          multi.answers = [{ id: uuid(), answer: "" }]
+          multi.answers = [
+            { id: uuid(), answer: "" },
+            { id: uuid(), answer: "" },
+          ]
           setQuestions([...questions, multi])
           break
         case QuestionType.RATING:
@@ -87,6 +94,34 @@ const CreateSurvey = () => {
       )
     )
 
+  const onMinChange = (id: string) => (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) =>
+    setQuestions(
+      questions.map((q) =>
+        q.id === id
+          ? {
+              ...q,
+              min: parseInt(e.currentTarget.value),
+            }
+          : q
+      )
+    )
+
+  const onMaxChange = (id: string) => (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) =>
+    setQuestions(
+      questions.map((q) =>
+        q.id === id
+          ? {
+              ...q,
+              max: parseInt(e.currentTarget.value),
+            }
+          : q
+      )
+    )
+
   const removeAnswer = (id: string) => (answerId: string) => () =>
     setQuestions(
       questions.map((q) =>
@@ -102,17 +137,17 @@ const CreateSurvey = () => {
     )
 
   return (
-    <>
+    <div className={styles.container}>
       <h1>Create a Survey</h1>
       <div>
         {questions.map((elem) => {
-          const { type, question, id } = elem
+          const { type, id } = elem
           switch (type) {
             case QuestionType.BINARY:
               return (
                 <Binary
                   key={id}
-                  question={question}
+                  question={elem}
                   onQuestionChange={onQuestionChange(id)}
                 />
               )
@@ -122,16 +157,23 @@ const CreateSurvey = () => {
                 <Multi
                   key={id}
                   type={QuestionType[type]}
-                  question={question}
+                  question={elem as IMultiQuestion}
                   onQuestionChange={onQuestionChange(id)}
-                  answers={(elem as IMultiQuestion).answers}
                   addAnswer={addAnswer(id)}
                   onAnswerChange={onAnswerChange(id)}
                   removeAnswer={removeAnswer(id)}
                 />
               )
             case QuestionType.RATING:
-              return <h3>Rating</h3>
+              return (
+                <Rating
+                  key={id}
+                  min={(elem as IRatingQuestion).min}
+                  onMinChange={onMinChange(id)}
+                  max={(elem as IRatingQuestion).max}
+                  onMaxChange={onMaxChange(id)}
+                />
+              )
             default:
               throw new Error("Unsupported question type")
           }
@@ -144,7 +186,7 @@ const CreateSurvey = () => {
         </select>
         <button onClick={addQuestion}>+</button>
       </div>
-    </>
+    </div>
   )
 }
 

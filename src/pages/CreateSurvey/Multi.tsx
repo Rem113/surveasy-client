@@ -1,10 +1,14 @@
-import React, { Fragment } from "react"
+import React from "react"
+
+import RemoveIcon from "../../components/RemoveIcon"
+import DownRightArrowIcon from "../../components/DownRightArrowIcon"
+
+import styles from "./Multi.scss"
 
 interface MultiProps {
   type: string
-  question: string
+  question: IMultiQuestion
   onQuestionChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  answers: IAnswer[]
   addAnswer: () => void
   removeAnswer: (id: string) => () => void
   onAnswerChange: (
@@ -16,7 +20,6 @@ const Multi = ({
   type,
   question,
   onQuestionChange,
-  answers,
   addAnswer,
   removeAnswer,
   onAnswerChange,
@@ -24,14 +27,17 @@ const Multi = ({
   return (
     <div>
       <p>{type.charAt(0).toUpperCase() + type.toLowerCase().slice(1)}</p>
-      <input value={question} onChange={onQuestionChange} />
+      <label htmlFor={`${question.id}question`}>Question: </label>
+      <input value={question.question} onChange={onQuestionChange} />
       <br />
-      {answers.map((answer) => (
-        <Fragment key={answer.id}>
+      {question.answers.map((answer) => (
+        <div key={answer.id} className={styles.answer}>
+          <label htmlFor={`${question.id}${answer.id}`}>
+            <DownRightArrowIcon />
+          </label>
           <input value={answer.answer} onChange={onAnswerChange(answer)} />
-          <button onClick={removeAnswer(answer.id)}>Remove this answer</button>
-          <br />
-        </Fragment>
+          <RemoveIcon onClick={removeAnswer(answer.id)} />
+        </div>
       ))}
       <button onClick={addAnswer}>Add answer</button>
     </div>
