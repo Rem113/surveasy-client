@@ -10,6 +10,9 @@
     "start": "parcel public/index.html",
     "build": "parcel build public/index.html && cp src/_redirects dist/_redirects"
   },
+  "alias": {
+    "components": "./src/components"
+  },
   "devDependencies": {
     "@types/node": "^14.11.1",
     "@types/react": "^16.9.49",
@@ -30,6 +33,7 @@
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
+    "src": "^1.1.2",
     "uuid": "^8.3.0"
   }
 }

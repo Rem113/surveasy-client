@@ -1,5 +1,7 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import { v4 as uuid } from "uuid"
+
+import PrimaryButton from "components/PrimaryButton"
 
 import Binary from "./Binary"
 import Multi from "./Multi"
@@ -17,42 +19,36 @@ enum QuestionType {
 const CreateSurvey = () => {
   const [questions, setQuestions] = useState<IQuestion[]>([])
 
-  const questionTypeRef = useRef<HTMLSelectElement>(null)
+  const onDown = (id: string) => () => {
+    const index = questions.findIndex((q) => q.id === id)
 
-  const addQuestion = () => {
-    if (questionTypeRef && questionTypeRef.current) {
-      const type = parseInt(questionTypeRef.current.value)
-
-      const elem: IQuestion = {
-        id: uuid(),
-        type,
-        question: "",
-      }
-
-      switch (type) {
-        case QuestionType.BINARY:
-          setQuestions([...questions, elem])
-          break
-        case QuestionType.EXCLUSIVE:
-        case QuestionType.MULTI:
-          const multi = elem as IMultiQuestion
-          multi.answers = [
-            { id: uuid(), answer: "" },
-            { id: uuid(), answer: "" },
-          ]
-          setQuestions([...questions, multi])
-          break
-        case QuestionType.RATING:
-          const rating = elem as IRatingQuestion
-          rating.max = 10
-          rating.min = 1
-          setQuestions([...questions, rating])
-          break
-        default:
-          throw new Error("Unsupported question type")
-      }
+    if (index < questions.length - 1) {
+      const arr = [...questions]
+      arr[index + 1] = questions[index]
+      arr[index] = questions[index + 1]
+      setQuestions(arr)
     }
   }
+
+  const onUp = (id: string) => () => {
+    const index = questions.findIndex((q) => q.id === id)
+
+    if (index > 0) {
+      const arr = [...questions]
+      arr[index - 1] = questions[index]
+      arr[index] = questions[index - 1]
+      setQuestions(arr)
+    }
+  }
+
+  const onDelete = (id: string) => () =>
+    setQuestions(questions.filter((q) => q.id !== id))
+
+  const addQuestion = () =>
+    setQuestions([
+      ...questions,
+      { id: uuid(), type: QuestionType.BINARY, question: "Question" },
+    ])
 
   const onQuestionChange = (id: string) => (
     e: React.ChangeEvent<HTMLInputElement>
@@ -139,6 +135,10 @@ const CreateSurvey = () => {
   return (
     <div className={styles.container}>
       <h1>Create a Survey</h1>
+      <br />
+      <PrimaryButton onClick={addQuestion}>Add question</PrimaryButton>
+      <br />
+      <br />
       <div>
         {questions.map((elem) => {
           const { type, id } = elem
@@ -149,6 +149,9 @@ const CreateSurvey = () => {
                   key={id}
                   question={elem}
                   onQuestionChange={onQuestionChange(id)}
+                  onDown={onDown(id)}
+                  onUp={onUp(id)}
+                  onDelete={onDelete(id)}
                 />
               )
             case QuestionType.EXCLUSIVE:
@@ -178,13 +181,6 @@ const CreateSurvey = () => {
               throw new Error("Unsupported question type")
           }
         })}
-        <select ref={questionTypeRef}>
-          <option value={QuestionType.BINARY}>Binary</option>
-          <option value={QuestionType.MULTI}>Multi</option>
-          <option value={QuestionType.EXCLUSIVE}>Exclusive</option>
-          <option value={QuestionType.RATING}>Rating</option>
-        </select>
-        <button onClick={addQuestion}>+</button>
       </div>
     </div>
   )
