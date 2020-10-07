@@ -31,11 +31,10 @@
 }
 
 .navigation {
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   width: 100%;
   z-index: 2;
-
   list-style-type: none;
   display: flex;
   justify-content: center;

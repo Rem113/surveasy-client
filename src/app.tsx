@@ -15,7 +15,11 @@ import CreateSurvey from "./pages/CreateSurvey"
 
 const App = () => (
   <BrowserRouter>
-    <Navbar />
+    <Route
+      path={[routes.HOME, routes.LOGIN, routes.SIGNUP]}
+      component={Navbar}
+      exact
+    />
     <Switch>
       <Route path={routes.HOME} component={Home} exact />
       <Route path={routes.SIGNUP} component={SignUp} exact />
