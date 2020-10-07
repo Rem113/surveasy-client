@@ -3,7 +3,7 @@ import React from "react"
 import styles from "./UpDownDelete.scss"
 
 const UpDownDelete = ({ width, height, onDown, onUp, onDelete }) => (
-  <>
+  <div className={styles.container}>
     <svg
       width={width}
       height={height}
@@ -28,7 +28,7 @@ const UpDownDelete = ({ width, height, onDown, onUp, onDelete }) => (
         fill="white"
       />
     </svg>
-    <div style={{ width: `${width / 2}px` }} />
+    <div className={styles.separator} />
     <svg
       width={width}
       height={height}
@@ -61,7 +61,7 @@ const UpDownDelete = ({ width, height, onDown, onUp, onDelete }) => (
         fill="white"
       />
     </svg>
-  </>
+  </div>
 )
 
 export default UpDownDelete

@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { v4 as uuid } from "uuid"
 
+import { QuestionType } from "../../core/QuestionType"
+
 import PrimaryButton from "components/PrimaryButton"
 
 import Binary from "./Binary"
@@ -8,13 +10,6 @@ import Multi from "./Multi"
 import Rating from "./Rating"
 
 import styles from "./CreateSurvey.scss"
-
-enum QuestionType {
-  BINARY,
-  MULTI,
-  EXCLUSIVE,
-  RATING,
-}
 
 const CreateSurvey = () => {
   const [questions, setQuestions] = useState<IQuestion[]>([])
@@ -43,6 +38,62 @@ const CreateSurvey = () => {
 
   const onDelete = (id: string) => () =>
     setQuestions(questions.filter((q) => q.id !== id))
+
+  const onQuestionTypeChange = (id: string) => (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const type = parseInt(e.currentTarget.value)
+
+    if (type === QuestionType.BINARY) {
+      setQuestions(
+        questions.map((q) =>
+          q.id === id ? { id, type, question: q.question } : q
+        )
+      )
+    } else if (type === QuestionType.RATING) {
+      setQuestions(
+        questions.map((q) =>
+          q.id === id ? { id, type, question: q.question, min: 1, max: 10 } : q
+        )
+      )
+    } else {
+      const question = questions.find((q) => q.id === id)!
+
+      if (
+        question.type === QuestionType.EXCLUSIVE ||
+        question.type === QuestionType.MULTI
+      ) {
+        setQuestions(
+          questions.map((q) =>
+            q.id === id
+              ? {
+                  id,
+                  type,
+                  question: q.question,
+                  answers: (q as IMultiQuestion).answers,
+                }
+              : q
+          )
+        )
+      } else {
+        setQuestions(
+          questions.map((q) =>
+            q.id === id
+              ? {
+                  id,
+                  type,
+                  question: q.question,
+                  answers: [
+                    { id: uuid(), answer: "Answer 1" },
+                    { id: uuid(), answer: "Answer 2" },
+                  ],
+                }
+              : q
+          )
+        )
+      }
+    }
+  }
 
   const addQuestion = () =>
     setQuestions([
@@ -89,6 +140,30 @@ const CreateSurvey = () => {
           : q
       )
     )
+
+  const onUpAnswer = (id: string) => (answerId: string) => () => {
+    const question = questions.find((q) => q.id === id) as IMultiQuestion
+    const index = question.answers.findIndex((a) => a.id === answerId)
+
+    if (index > 0) {
+      const answers = [...question.answers]
+      answers[index - 1] = question.answers[index]
+      answers[index] = question.answers[index - 1]
+      setQuestions(questions.map((q) => (q.id === id ? { ...q, answers } : q)))
+    }
+  }
+
+  const onDownAnswer = (id: string) => (answerId: string) => () => {
+    const question = questions.find((q) => q.id === id) as IMultiQuestion
+    const index = question.answers.findIndex((a) => a.id === answerId)
+
+    if (index < question.answers.length - 1) {
+      const answers = [...question.answers]
+      answers[index + 1] = question.answers[index]
+      answers[index] = question.answers[index + 1]
+      setQuestions(questions.map((q) => (q.id === id ? { ...q, answers } : q)))
+    }
+  }
 
   const onMinChange = (id: string) => (
     e: React.ChangeEvent<HTMLInputElement>
@@ -147,6 +222,7 @@ const CreateSurvey = () => {
               return (
                 <Binary
                   key={id}
+                  onQuestionTypeChange={onQuestionTypeChange(id)}
                   question={elem}
                   onQuestionChange={onQuestionChange(id)}
                   onDown={onDown(id)}
@@ -159,10 +235,16 @@ const CreateSurvey = () => {
               return (
                 <Multi
                   key={id}
-                  type={QuestionType[type]}
+                  exclusive={type === QuestionType.EXCLUSIVE}
+                  onQuestionTypeChange={onQuestionTypeChange(id)}
                   question={elem as IMultiQuestion}
                   onQuestionChange={onQuestionChange(id)}
+                  onDown={onDown(id)}
+                  onUp={onUp(id)}
+                  onDelete={onDelete(id)}
                   addAnswer={addAnswer(id)}
+                  onUpAnswer={onUpAnswer(id)}
+                  onDownAnswer={onDownAnswer(id)}
                   onAnswerChange={onAnswerChange(id)}
                   removeAnswer={removeAnswer(id)}
                 />
