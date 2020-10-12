@@ -1,11 +1,36 @@
 import React from "react"
 
-const Rating = ({ min, onMinChange, max, onMaxChange }) => {
+import { QuestionType } from "../../core/QuestionType"
+import Question from "./Question"
+
+import styles from "./Rating.scss"
+
+const Rating = ({
+  onQuestionTypeChange,
+  question,
+  onQuestionChange,
+  onDown,
+  onUp,
+  onDelete,
+  onMinChange,
+  onMaxChange,
+}) => {
   return (
-    <div>
-      <input type="number" value={min} onChange={onMinChange} />
-      <input type="number" value={max} onChange={onMaxChange} />
-    </div>
+    <Question
+      type={QuestionType.RATING}
+      onQuestionTypeChange={onQuestionTypeChange}
+      question={question}
+      onQuestionChange={onQuestionChange}
+      onDown={onDown}
+      onUp={onUp}
+      onDelete={onDelete}
+    >
+      <div className={styles.wrapper}>
+        <input type="number" value={question.min} onChange={onMinChange} />
+        <input type="range" min={question.min} max={question.max} />
+        <input type="number" value={question.max} onChange={onMaxChange} />
+      </div>
+    </Question>
   )
 }
 

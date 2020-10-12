@@ -84,8 +84,8 @@ const CreateSurvey = () => {
                   type,
                   question: q.question,
                   answers: [
-                    { id: uuid(), answer: "Answer 1" },
-                    { id: uuid(), answer: "Answer 2" },
+                    { id: uuid(), answer: "Answer" },
+                    { id: uuid(), answer: "Answer" },
                   ],
                 }
               : q
@@ -118,7 +118,7 @@ const CreateSurvey = () => {
               ...q,
               answers: [
                 ...(q as IMultiQuestion).answers,
-                { id: uuid(), answer: "" },
+                { id: uuid(), answer: "Answer" },
               ],
             }
           : q
@@ -253,9 +253,13 @@ const CreateSurvey = () => {
               return (
                 <Rating
                   key={id}
-                  min={(elem as IRatingQuestion).min}
+                  onQuestionTypeChange={onQuestionTypeChange(id)}
+                  question={elem}
+                  onQuestionChange={onQuestionChange(id)}
+                  onDown={onDown(id)}
+                  onUp={onUp(id)}
+                  onDelete={onDelete(id)}
                   onMinChange={onMinChange(id)}
-                  max={(elem as IRatingQuestion).max}
                   onMaxChange={onMaxChange(id)}
                 />
               )

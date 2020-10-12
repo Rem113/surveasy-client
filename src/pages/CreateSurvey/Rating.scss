@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+
+  input[type="number"] {
+    flex: 1;
+    min-width: 0;
+  }
+
+  input[type="range"] {
+    flex: 10;
+    margin: 0 1rem;
+  }
+}
