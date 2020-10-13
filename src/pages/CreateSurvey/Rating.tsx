@@ -3,6 +3,8 @@ import React from "react"
 import { QuestionType } from "../../core/QuestionType"
 import Question from "./Question"
 
+import RightArrowIcon from "components/RightArrowIcon"
+
 import styles from "./Rating.scss"
 
 const Rating = ({
@@ -27,7 +29,7 @@ const Rating = ({
     >
       <div className={styles.wrapper}>
         <input type="number" value={question.min} onChange={onMinChange} />
-        <input type="range" min={question.min} max={question.max} />
+        <RightArrowIcon />
         <input type="number" value={question.max} onChange={onMaxChange} />
       </div>
     </Question>
